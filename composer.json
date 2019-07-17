@@ -1,0 +1,22 @@
+{
+    "name": "viajeros/bresson",
+    "description": "Image server",
+    "keywords": [],
+    "homepage": "http://desarrollo.viajeros.com/redmine/projects/procesadordinamico/wiki",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mauro Chojrin",
+            "email": "mauroc@viajeros.com"
+        }
+    ],
+    "require": {
+        "peej/tonic": "3.*",
+        "aws/aws-sdk-php": "2.*",
+        "php": ">=5.4.0",
+        "pimple/pimple" : "*",
+        "ext-imagick": ">=3.0.0",
+        "symfony/yaml": "v2.3.3",
+		"monolog/monolog" : "1.6"
+    }
+}

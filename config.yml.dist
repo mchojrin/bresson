@@ -1,0 +1,38 @@
+# This is the configuration file for the Bresson server
+# In here you can set up the dependencies and some rules regarding how the images are to be processed
+# By default, LocalStorage is used and no rules are defined
+#
+##
+#
+process_rules:
+# URI_prefix:
+#   size:
+#     [fixed: N|calculated: f]
+# Any number of pre-defined sizes can be defined, each one can be one of:
+#  - "fixed": Establishes a fixed size for both dimensions
+#  - "calculated": Establishes the size of both dimensions equal to the appliance of the function "f" to (width, height)
+#
+input_data_source:
+  class:
+# PHP Class that should be used in order to fetch stored content, i.e.: Bresson\S3Storage
+  init_params:
+# Associative array of initialization parameters for the data source, i.e.: { key: 'MyKey', secret: 'MySecret', bucket: 'MyBucket', version: 'BressonVersion'}
+
+output_data_source:
+  class:
+  init_params:
+# See input_data_source for explanation
+
+image_processor:
+  class:
+# PHP Class that should be used in order to process images, i.e.: Bresson\IMagickProcessor
+
+# Example
+# images:
+#   size1:
+#     fixed: 200 # Establishes a fixed size of 200x200 for requests starting with "images/" and suffixed by "size1", i.e.: images/myimage-size1.jpg
+# large-images:
+#   size1:
+#     fixed: 1600
+#   size2:
+#     calculated: min # Establishes a calculated size of min(width, height)xmin(width, height) for requests starting with "large-images/" and suffixed by "size2", i.e.: large-images/myimage-size2.jpg
